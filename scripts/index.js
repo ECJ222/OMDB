@@ -13,7 +13,6 @@ function onSubmit(event) {
       return data.json()
     })
     .then((res) => {
-      console.log(res)
       movieContainer.innerHTML = ""
 
       if (Array.isArray(res.Search)) {
@@ -32,7 +31,7 @@ function addMovieToGrid(movie, index) {
       <img src="${movie.Poster}" alt="${movie.Title}"/>
       <div class="details collapsed">
         <span class="title">
-          ${movie.Title.length > 15 ? movie.Title.substring(0, 15) + ".." : movie.Title}
+          ${movie.Title.length > 17 ? movie.Title.substring(0, 17) + ".." : movie.Title}
         </span>
         <a role="button" onclick="showMovieDetails(this, 'movie-${index}')" data-movie-id="${movie.imdbID}" class="primary-btn">
           Show Details
@@ -175,7 +174,7 @@ function closeMovieDetails(element, movieId) {
           <img src="${movie.Poster}" alt="${movie.Title}"/>
           <div class="details collapsed">
             <span class="title">
-              ${movie.Title.length > 15 ? movie.Title.substring(0, 15) + ".." : movie.Title}
+              ${movie.Title.length > 23 ? movie.Title.substring(0, 23) + ".." : movie.Title}
             </span>
             <a role="button" onclick="showMovieDetails(this, '${movieId}')" data-movie-id="${movie.imdbID}" class="primary-btn">
               Show Details
