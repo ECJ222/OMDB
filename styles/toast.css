@@ -1,0 +1,51 @@
+@keyframes slide-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+#toastContainer {
+  background-color: rgba(255, 0, 0, 1);
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 50%;
+  max-width: 200px;
+  font-size: 0.9rem;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+.slide-in {
+    animation: slide-in 300ms;
+}
+
+.fade-out {
+    animation: fade-out 300ms forwards;
+}
+
+@media (min-width: 1280px) {
+    #toastContainer {
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,232 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+* {
+  font-family: Helvetica, Arial, Sans-Serif, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-kerning: normal;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: calc(10px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  word-wrap: break-word;
+  background-color: #101415;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+  color: rgba(255, 0, 0, 1);
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 1.5rem;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  padding: 0 1.5rem;
+}
+
+.search-container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  animation: fade-in 300ms;
+  background-color: #fff;
+}
+
+input[type="search"]:-webkit-autofill,
+input[type="search"]:-webkit-autofill:hover,
+input[type="search"]:-webkit-autofill:focus,
+input[type="search"]:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+input[type="search"] {
+  padding-left: 0.6rem;
+  width: 70%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  letter-spacing: 0.2rem;
+}
+
+input[type="search"]:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #bbc1d6;
+}
+
+::-moz-placeholder {
+  color: #bbc1d6;
+}
+
+:-ms-input-placeholder {
+  color: #bbc1d6;
+}
+
+::-ms-input-placeholder {
+  color: #bbc1d6;
+}
+
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.search-btn {
+  flex: 1;
+  max-width: 80px;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.movie-container {
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  place-content: center;
+  grid-gap: 2rem 1rem;
+  padding: 0 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.movie-poster {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180px;
+}
+
+.movie-poster img {
+  width: 100%;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.details {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  background-color: #101415;
+  box-shadow: 0px 0.1px 1px rgba(255, 255, 255, 1);
+}
+
+.details  span {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.collapsed {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.expanded {
+  position: relative;
+  z-index: 1;
+}
+
+.expanded .md-info span {
+  font-size: 0.7rem;
+}
+
+.expanded .primary-btn {
+  align-self: center;
+}
+
+.title {
+  max-width: max-content;
+  font-size: 0.8rem;
+  width: 100%;
+  color: #fff;
+}
+
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 70%;
+  max-width: 150px;
+  border-radius: 10px;
+  height: 30px;
+  max-height: 35px;
+  font-size: 0.8rem;
+  margin-top: 0.6rem;
+  color: #fff;
+  background-color: rgba(255, 0, 0, 1);
+  cursor: pointer;
+}
+
+.fade-in {
+  animation: fade-in 300ms ease-in;
+}
+
+@media (min-width: 480px) {
+  .movie-container {
+    grid-template-columns: repeat(2, minmax(0, 300px));
+  }
+}
+
+@media (min-width: 768px) {
+  .movie-container {
+    grid-template-columns: repeat(3, minmax(0, 300px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  .movie-container {
+    grid-template-columns: repeat(5, minmax(0, 300px));
+  }
+}
